@@ -1,26 +1,30 @@
-import { steps } from "@/components/landing/landing-data";
+"use client";
+
 import { SectionHeading } from "@/components/landing/section-heading";
+import { useLocale } from "@/i18n/locale-context";
 
 export function HowItWorksSection() {
+  const { t } = useLocale();
+
   return (
     <section
       id="how"
       className="bg-blush bg-size-[60px_60px] bg-[linear-gradient(rgba(200,120,120,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(200,120,120,0.05)_1px,transparent_1px)] px-6 py-20 sm:px-[60px] sm:py-[120px]"
     >
       <SectionHeading
-        eyebrow="How it works"
+        eyebrow={t.how.eyebrow}
         title={
           <>
-            Three steps to
+            {t.how.titleLine1}
             <br />
-            <em className="text-coral">glowing skin</em>
+            <em className="text-coral">{t.how.titleEmphasis}</em>
           </>
         }
-        subtitle="Getting started takes less than two minutes."
+        subtitle={t.how.subtitle}
         subtitleClassName="mb-2"
       />
       <div className="mx-auto mt-12 max-w-[900px]">
-        {steps.map((step, index) => (
+        {t.how.steps.map((step, index) => (
           <article
             key={step.title}
             className="grid gap-5 border-b border-rose/30 py-10 last:border-none sm:grid-cols-[80px_1fr] sm:gap-8"

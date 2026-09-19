@@ -2,7 +2,7 @@ import { PhoneCard } from "@/components/landing/phone-card";
 
 export function HeroPhones() {
   return (
-    <div className="pointer-events-none absolute top-1/2 right-0 hidden -translate-y-1/2 items-end lg:flex xl:right-32">
+    <div className="pointer-events-none absolute top-1/2 right-0 hidden -translate-y-1/2 items-end xl:flex">
       <div className="relative mr-[-18px] w-[320px] overflow-hidden rounded-[36px] border-2 border-white/80 bg-white shadow-phone animate-float-left">
         <div className="min-h-[500px] bg-blush bg-size-[20px_20px] bg-[linear-gradient(rgba(200,120,120,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(200,120,120,0.06)_1px,transparent_1px)] px-4 py-5">
           <div className="mb-4 flex justify-between text-[10px] font-semibold">

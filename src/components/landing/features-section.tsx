@@ -1,25 +1,30 @@
+"use client";
+
 import { features } from "@/components/landing/landing-data";
 import { SectionHeading } from "@/components/landing/section-heading";
+import { useLocale } from "@/i18n/locale-context";
 
 export function FeaturesSection() {
+  const { t } = useLocale();
+
   return (
     <section
       id="features"
       className="border-t border-rose/15 bg-white px-6 py-20 sm:px-[60px] sm:py-[120px]"
     >
       <SectionHeading
-        eyebrow="Everything you need"
+        eyebrow={t.features.eyebrow}
         title={
           <>
-            Designed for your
+            {t.features.titleLine1}
             <br />
-            <em className="text-coral">glow-up journey</em>
+            <em className="text-coral">{t.features.titleEmphasis}</em>
           </>
         }
-        subtitle="Six powerful features that work together to keep your skin on track."
+        subtitle={t.features.subtitle}
       />
       <div className="mx-auto mt-16 grid max-w-[1100px] gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature) => (
+        {features.map((feature, index) => (
           <article
             key={feature.title}
             className="relative overflow-hidden rounded-3xl bg-warm-white px-9 py-10 transition hover:-translate-y-1 hover:shadow-card-hover"
@@ -30,9 +35,11 @@ export function FeaturesSection() {
             >
               {feature.icon}
             </div>
-            <h3 className="font-display text-[22px] text-text-dark">{feature.title}</h3>
+            <h3 className="font-display text-[22px] text-text-dark">
+              {t.features.items[index].title}
+            </h3>
             <p className="mt-3 text-[15px] leading-7 font-light text-text-mid">
-              {feature.description}
+              {t.features.items[index].description}
             </p>
           </article>
         ))}
